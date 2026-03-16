@@ -26,7 +26,7 @@ sed -i 's/{{project}}/my_project/g' $(grep -rl '{{project}}' .)
 sed -i 's/v-grpc/my-project/g' $(grep -rl 'v-grpc' .)
 sed -i 's/github.com/github.com/g' $(grep -rl 'github.com' .)
 sed -i "s/2026/$(date +%Y)/g" $(grep -rl '2026' .)
-sed -i "s/{{CURRENT_DATE}}/$(date +%Y-%m-%d)/g" $(grep -rl '{{CURRENT_DATE}}' .)
+sed -i "s/2026-03-16/$(date +%Y-%m-%d)/g" $(grep -rl '2026-03-16' .)
 ```
 
 ## Placeholder Reference
@@ -60,7 +60,7 @@ sed -i "s/{{CURRENT_DATE}}/$(date +%Y-%m-%d)/g" $(grep -rl '{{CURRENT_DATE}}' .)
 | Placeholder | Description | Example | Files |
 |---|---|---|---|
 | `2026` | Current year | `2026` | SPDX headers (all files), GOVERNANCE.md, MAINTAINERS.md |
-| `{{CURRENT_DATE}}` | Current date (ISO) | `2026-02-14` | STATE.a2ml, MAINTAINERS.md |
+| `2026-03-16` | Current date (ISO) | `2026-02-14` | STATE.a2ml, MAINTAINERS.md |
 | `{{DATE}}` | Last updated date | `2026-02-14` | TOPOLOGY.md, THREAT-MODEL.md |
 
 ### Contact & Security
@@ -68,7 +68,7 @@ sed -i "s/{{CURRENT_DATE}}/$(date +%Y-%m-%d)/g" $(grep -rl '{{CURRENT_DATE}}' .)
 | Placeholder | Description | Example | Files |
 |---|---|---|---|
 | `j.d.a.jewell@open.ac.uk` | Security contact email | `security@example.org` | SECURITY.md |
-| `{{PGP_FINGERPRINT}}` | 40-char PGP fingerprint | `ABCD 1234 ...` | SECURITY.md |
+| `[PGP fingerprint not set]` | 40-char PGP fingerprint | `ABCD 1234 ...` | SECURITY.md |
 | `{{PGP_KEY_URL}}` | URL to public PGP key | `https://keys.openpgp.org/...` | SECURITY.md |
 | `{{WEBSITE}}` | Project website | `https://example.org` | SECURITY.md |
 | `j.d.a.jewell@open.ac.uk` | Conduct reports email | `conduct@example.org` | CODE_OF_CONDUCT.md |
@@ -85,7 +85,7 @@ sed -i "s/{{CURRENT_DATE}}/$(date +%Y-%m-%d)/g" $(grep -rl '{{CURRENT_DATE}}' .)
 
 | Placeholder | Description | Example | Files |
 |---|---|---|---|
-| `{{LICENSE}}` | License name | `PMPL-1.0-or-later` | ABI-FFI-README.md |
+| `PMPL-1.0-or-later` | License name | `PMPL-1.0-or-later` | ABI-FFI-README.md |
 | `{{PROJECT_PURPOSE}}` | One-line project description | `FFI bridges between languages` | STATE.a2ml |
 
 ### AI Manifest
